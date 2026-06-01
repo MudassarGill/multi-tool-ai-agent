@@ -5,8 +5,15 @@ from langchain_core.output_parsers import StrOutputParser
 import os
 #add logging file also with file and command line
 import logging
-
-logging.basicConfig(level=logging.INFO)
+import sys
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("app.log"),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
 logger = logging.getLogger(__name__)
 
 load_dotenv()
