@@ -26,7 +26,7 @@ llm = HuggingFaceEndpoint(
     max_new_tokens=256
 )
 
-response = llm.invoke("Hello, how are you?")
+response = llm.invoke("Hello, how are you? what is the captial of pakistan")
 print(response)
 
 
